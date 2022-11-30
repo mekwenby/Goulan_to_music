@@ -23,7 +23,7 @@ def 角色信息():
     '''
     return text
 
-Tite = '勾栏听曲 0.9'
+Tite = '勾栏听曲 0.9.1'
 
 
 if __name__ == '__main__':

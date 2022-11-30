@@ -1213,15 +1213,15 @@ class 元神操作视图():
         def 翻页(页码=1):
             self.页码 = 页码
             if self.页码 > 1:
-                self.上一页 = Button(self.显示装备列表面板, text='上一页', command=lambda: 翻页(self.页码 - 1), relief=FLAT).place(x=380,
-                                                                                                                 y=排序按钮y)
+                self.上一页 = Button(self.显示装备列表面板, text='上一页', command=lambda: 翻页(self.页码 - 1), relief=FLAT).place(x=460,
+                                                                                                                 y=排序按钮y-60)
             elif self.页码 == 1:
-                self.上一页 = Button(self.显示装备列表面板, text='上一页', relief=FLAT).place(x=380, y=排序按钮y)
+                self.上一页 = Button(self.显示装备列表面板, text='上一页', relief=FLAT).place(x=460, y=排序按钮y-60)
 
             if len(DE.Player_Mian.装备组) < self.页码 * 25:
-                self.下一页 = Button(self.显示装备列表面板, text='下一页', relief=FLAT).place(x=320, y=排序按钮y)
+                self.下一页 = Button(self.显示装备列表面板, text='下一页', relief=FLAT).place(x=460, y=排序按钮y)
             else:
-                self.下一页 = Button(self.显示装备列表面板, text='下一页', command=lambda: 翻页(self.页码 + 1), relief=FLAT).place(x=320,
+                self.下一页 = Button(self.显示装备列表面板, text='下一页', command=lambda: 翻页(self.页码 + 1), relief=FLAT).place(x=460,
                                                                                                                  y=排序按钮y)
 
             for i in self.E_ICO_C:
@@ -1261,34 +1261,34 @@ class 元神操作视图():
         self.关闭按钮 = Button(self.显示装备列表面板, text='X', command=关闭).place(y=0, x=550)
         self.E_ICO_C = []
         # self.排序_HP_P = Open_Jpg(os.path.join('Resource','picture','ui',f'G_PX_MP.jpg'))
-        self.排序_HP = Button(self.显示装备列表面板, text='力量加强', command=self.E_LIST_L, relief=FLAT).place(x=10, y=排序按钮y)
+        self.排序_HP = Button(self.显示装备列表面板, text='力量+', command=self.E_LIST_L, relief=FLAT).place(x=10, y=排序按钮y)
 
         # self.排序_WL_P = Open_Jpg(os.path.join('Resource','picture','ui',f'G_PX_WL.jpg'))
-        self.排序_WL = Button(self.显示装备列表面板, text='智力加强', command=self.E_LIST_ZL, relief=FLAT).place(x=100, y=排序按钮y)
+        self.排序_WL = Button(self.显示装备列表面板, text='智力+', command=self.E_LIST_ZL, relief=FLAT).place(x=60+20, y=排序按钮y)
 
         # self.排序_FS_P = Open_Jpg(os.path.join('Resource','picture','ui',f'G_PX_FS.jpg'))
-        self.排序_FS = Button(self.显示装备列表面板, text='体力加强', command=self.E_LIST_TL, relief=FLAT).place(x=190, y=排序按钮y)
+        self.排序_FS = Button(self.显示装备列表面板, text='体力+', command=self.E_LIST_TL, relief=FLAT).place(x=110+40, y=排序按钮y)
 
         # self.排序_MZ_P = Open_Jpg(os.path.join('Resource','picture','ui',f'G_PX_MZ.jpg'))
-        self.排序_MZ = Button(self.显示装备列表面板, text='敏捷加强', command=self.E_LIST_MJ, relief=FLAT).place(x=280, y=排序按钮y)
+        self.排序_MZ = Button(self.显示装备列表面板, text='敏捷+', command=self.E_LIST_MJ, relief=FLAT).place(x=160+60, y=排序按钮y)
 
         # self.排序_S_P = Open_Jpg(os.path.join('Resource','picture','ui',f'G_PX_SB.jpg'))
-        self.排序_S = Button(self.显示装备列表面板, text='完美程度', command=self.E_LIST_WM, relief=FLAT).place(x=370, y=排序按钮y)
+        self.排序_S = Button(self.显示装备列表面板, text='完美+', command=self.E_LIST_WM, relief=FLAT).place(x=210+80, y=排序按钮y)
         翻页()
         if self.页码 > 1:
-            self.上一页 = Button(self.显示装备列表面板, text='上一页', command=lambda: 翻页(self.页码 - 1), relief=FLAT).place(x=380,
-                                                                                                             y=排序按钮y)
+            self.上一页 = Button(self.显示装备列表面板, text='上一页', command=lambda: 翻页(self.页码 - 1), relief=FLAT).place(x=460,
+                                                                                                             y=排序按钮y-60)
         else:
-            self.上一页 = Button(self.显示装备列表面板, text='上一页', relief=FLAT).place(x=380, y=排序按钮y)
+            self.上一页 = Button(self.显示装备列表面板, text='上一页', relief=FLAT).place(x=460, y=排序按钮y-60)
+
         if len(DE.Player_Mian.装备组) > self.页码 * 25:
-            self.下一页 = Button(self.显示装备列表面板, text='下一页', command=lambda: 翻页(self.页码 + 1), relief=FLAT).place(x=320,
+            self.下一页 = Button(self.显示装备列表面板, text='下一页', command=lambda: 翻页(self.页码 + 1), relief=FLAT).place(x=460,
                                                                                                              y=排序按钮y)
         else:
-            self.下一页 = Button(self.显示装备列表面板, text='下一页', relief=FLAT).place(x=320, y=排序按钮y)
+            self.下一页 = Button(self.显示装备列表面板, text='下一页', relief=FLAT).place(x=460, y=排序按钮y)
 
         '''显示字符 '排序方式' '''
-        self.排序_L = Label(self.显示装备列表面板, text=f'排序方式' + f'   共计装备:{len(DE.Player_Mian.装备组)} 件') \
-            .place(x=11, y=排序按钮y - 25)
+        self.排序_L = Label(self.显示装备列表面板,bg = 'white', text=f'共计装备:{len(DE.Player_Mian.装备组)} 件').place(x=11, y=排序按钮y - 25)
 
     def E_LIST_MJ(self):
         # 列表排序 #x 对象属性
@@ -4354,7 +4354,7 @@ class Map():
 
         DE.敌人阵容 = []
 
-        reward.sets({'Y': 50, 'G': 50, 'T': 0, 'Exp': 0})
+        reward.sets(Config_Config.get('R5'))
 
         # 开始花朝节构建敌人阵容
         if data == '梅':  # 判断
